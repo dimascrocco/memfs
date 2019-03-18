@@ -1,0 +1,126 @@
+{
+  "_from": "memfs",
+  "_id": "memfs@2.15.2",
+  "_inBundle": false,
+  "_integrity": "sha512-jFC2mc3Aa224nJB824vbJzuiksf3+wPjFSKrXS7bA3o3H0Yy4/bh0R1nAsQyL/P80PVyT56ZowQJ+NGniHWhVQ==",
+  "_location": "/memfs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "memfs",
+    "name": "memfs",
+    "escapedName": "memfs",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/memfs/-/memfs-2.15.2.tgz",
+  "_shasum": "199b64580cf849ea641d8fac81d96742bfebd26d",
+  "_spec": "memfs",
+  "_where": "/home/dimas/phelcom/projetos/retinal/smartrc",
+  "bugs": {
+    "url": "https://github.com/streamich/memfs/issues"
+  },
+  "bundleDependencies": false,
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "dependencies": {
+    "fast-extend": "0.0.2",
+    "fs-monkey": "^0.3.3"
+  },
+  "deprecated": false,
+  "description": "In-memory file-system with Node's fs API.",
+  "devDependencies": {
+    "@semantic-release/changelog": "3.0.2",
+    "@semantic-release/git": "7.0.8",
+    "@semantic-release/npm": "5.1.4",
+    "@types/jest": "23.3.14",
+    "@types/node": "10.12.26",
+    "cpy-cli": "^2.0.0",
+    "husky": "1.3.1",
+    "jest": "21.2.1",
+    "prettier": "1.16.4",
+    "pretty-quick": "1.10.0",
+    "rimraf": "2.6.3",
+    "semantic-release": "15.13.3",
+    "ts-jest": "23.10.5",
+    "ts-node": "7.0.1",
+    "tslint": "5.12.1",
+    "tslint-config-common": "1.6.0",
+    "typescript": "3.3.3"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/streamich/memfs#readme",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$"
+  },
+  "keywords": [
+    "fs",
+    "filesystem",
+    "fs.js",
+    "memory-fs",
+    "memfs",
+    "file",
+    "file system",
+    "mount",
+    "memory",
+    "in-memory",
+    "virtual",
+    "test",
+    "testing",
+    "mock"
+  ],
+  "main": "lib/index.js",
+  "name": "memfs",
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/streamich/memfs.git"
+  },
+  "scripts": {
+    "build": "tsc -p . && cpy src/*.js lib",
+    "clean": "rimraf lib types",
+    "precommit": "pretty-quick --staged",
+    "prepush": "yarn prettier:diff && yarn tslint",
+    "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.{ts,js}\"",
+    "prettier:diff": "prettier -l \"src/**/*.{ts,js}\"",
+    "semantic-release": "semantic-release",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "tslint": "tslint \"src/**/*.ts\" -t verbose",
+    "watch": "watch \"npm run build\" ./src"
+  },
+  "types": "lib/index.d.ts",
+  "version": "2.15.2"
+}
